@@ -1,0 +1,27 @@
+#include <stdio.h>
+
+int main() {
+    int units;
+    int totalUnits = 0;
+    int count = 0;
+    float average;
+
+    printf("Enter daily electricity units (-999 to stop): ");
+    scanf("%d", &units);
+
+    while(units != -999) {
+        totalUnits += units;
+        count++;
+        printf("Enter daily electricity units (-999 to stop): ");
+        scanf("%d", &units);
+    }
+
+    if(count > 0) {
+        average = (float)totalUnits / count;
+        printf("Average daily consumption: %.2f units\n", average);
+    } else {
+        printf("No data entered.\n");
+    }
+
+    return 0;
+}
