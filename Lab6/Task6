@@ -1,0 +1,19 @@
+#include <stdio.h>
+
+int main() {
+    float salary;
+    int year;
+
+    printf("Enter the base salary: ");
+    scanf("%f", &salary);
+
+    printf("\nYear\tSalary\n");
+    
+
+    for(year = 1; year <= 10; year++) {
+        salary = salary + (salary * 0.05);
+        printf("%d\t%.2f\n", year, salary);
+    }
+
+    return 0;
+}
