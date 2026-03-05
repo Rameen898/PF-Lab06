@@ -1,0 +1,25 @@
+#include <stdio.h>
+
+int main()
+{
+    int balance;
+    int used;
+
+    printf("Enter available data balance (MB): ");
+    scanf("%d", &balance);
+
+    while(balance > 0)
+    {
+        printf("Enter data used (MB): ");
+        scanf("%d", &used);
+
+        balance = balance - used;
+
+        printf("Remaining data: %d MB\n", balance);
+    }
+
+    printf("Data balance finished.\n");
+
+    return 0;
+}
+
