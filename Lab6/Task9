@@ -1,0 +1,17 @@
+#include <stdio.h>
+
+int main() {
+    int i,tickets;
+    int total = 0;
+
+    printf("How many VIP tickets do you want to sell? ");
+    scanf("%d", &tickets);
+
+    for (i = 1; i <= tickets; i++) {
+        total += i * 100;
+    }
+
+    printf("The total revenue for %d tickets is $%d\n", tickets, total);
+
+    return 0;
+}
