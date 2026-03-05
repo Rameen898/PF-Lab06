@@ -1,0 +1,38 @@
+#include <stdio.h>
+
+int main() {
+    int rating;
+    int excellent = 0, satisfactory = 0, needsImprovement = 0;
+
+    printf("Enter employee performance ratings (0-100).\n");
+    printf("Type -1 when you are done.\n\n");
+
+    while (1) {
+        printf("Enter rating: ");
+        scanf("%d", &rating);
+
+        if (rating == -1) {
+            break;
+        }
+
+        if (rating >= 85 && rating <= 100) {
+            excellent++;
+            printf("Category: Excellent!\n\n");
+        } else if (rating >= 60) {
+            satisfactory++;
+            printf("Category: Satisfactory.\n\n");
+        } else if (rating >= 0) {
+            needsImprovement++;
+            printf("Category: Needs Improvement.\n\n");
+        } else {
+            printf("Please enter a number between 0 and 100, or -1 to finish.\n\n");
+        }
+    }
+
+    printf("Summary of Employee Performance:\n");
+    printf("Excellent: %d\n", excellent);
+    printf("Satisfactory: %d\n", satisfactory);
+    printf("Needs Improvement: %d\n", needsImprovement);
+
+    return 0;
+}
