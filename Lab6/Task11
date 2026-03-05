@@ -1,0 +1,30 @@
+#include <stdio.h>
+
+int main() {
+    double price, total = 0, finalAmount;
+    int choice;
+    do {
+        printf("Enter the price of the food item: ");
+        scanf("%lf", &price);
+
+        total += price;
+        printf("Current total: %.2lf\n", total);
+
+        printf("Do you want to add another item? (1 = Yes, 0 = No): ");
+        scanf("%d", &choice);
+
+    } while (choice == 1);
+
+    if (total > 3000) {
+        finalAmount = total * 0.9;
+        printf("\nYour total bill: %.2lf\n", total);
+        printf("?? You got a 10%% discount!\n");
+        printf("Amount to pay: %.2lf\n", finalAmount);
+    } else {
+        finalAmount = total;
+        printf("\nTotal amount to pay: %.2lf\n", finalAmount);
+    }
+
+    return 0;
+}
+
