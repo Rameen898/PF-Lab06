@@ -1,0 +1,22 @@
+#include <stdio.h>
+
+int main()
+{
+    int code;
+
+    do
+    {
+        printf("Enter access code: ");
+        scanf("%d", &code);
+
+        if(code != 2468)
+        {
+            printf("Wrong code. Try again.\n");
+        }
+
+    } while(code != 2468);
+
+    printf("Access granted. Door unlocked.\n");
+
+    return 0;
+}
