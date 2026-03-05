@@ -1,0 +1,37 @@
+#include <stdio.h>
+
+int main() {
+    int totalSpaces = 50;
+    int carsParked = 0;
+    int choice;
+
+    printf("We have %d spaces available.\n\n", totalSpaces);
+
+    while (carsParked < totalSpaces) {
+        printf("A car arrives. Do you want to park it? (1 = Yes, 0 = Stop): ");
+        scanf("%d", &choice);
+
+        if (choice == 1) {
+            carsParked++;
+            int remaining = totalSpaces - carsParked;
+            printf("Car parked! Remaining spaces: %d\n", remaining);
+
+            if (remaining == 0) {
+                printf("The parking lot is now full. No more cars can enter.\n");
+                break;
+            }
+        } else if (choice == 0) {
+            printf("Parking stopped by operator.\n");
+            break;
+        } else {
+            printf("Invalid input. Please enter 1 to park a car or 0 to stop.\n");
+        }
+    }
+
+    printf("\nParking Summary:\n");
+    printf("Total cars parked: %d\n", carsParked);
+    printf("Spaces left: %d\n", totalSpaces - carsParked);
+
+    return 0;
+}
+
